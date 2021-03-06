@@ -2,8 +2,16 @@ import text
 
 def inputnumb() :
     numb = 0
-    numb = int(input("Для перехода, введите номер задачи:"))
-    choisetask(numb)
+    try :
+        numb = int(input("Для перехода, введите номер задачи:"))
+        if 1<= int(numb) <=5 :
+            choisetask(numb)
+        else :
+            text.repeat()
+            inputnumb()
+    except ValueError :
+        text.repeat()
+        inputnumb()
 
 
 def choisetask(numb) :
